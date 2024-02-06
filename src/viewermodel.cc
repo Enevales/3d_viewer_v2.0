@@ -48,6 +48,6 @@ int ViewerModel::get_edges_num(){
     return indices_.size();
 }
 
-std::vector<Vertex> &ViewerModel::set_vertices(){
+std::vector<Vertex> &ViewerModel::get_vertices(){
    return vertices_;
 }

@@ -15,12 +15,14 @@ public:
     void set_file_path(QString file_name);
     int get_vertices_num();
     int get_edges_num();
-    float *get_vertices();
+    void set_widget(GLWidget *widget);
+    void get_vertices();
 
-    friend class GLWidget;
+//    friend class GLWidget;
 private:
     std::string file_path_;
     ViewerModel *model;
+    GLWidget *widget_;
     int status_;
 };
 

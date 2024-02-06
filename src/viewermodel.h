@@ -20,7 +20,7 @@ public:
     int ParseObjectFile(std::string file_path);
     int get_vertices_num();
     int get_edges_num();
-   std::vector<Vertex> &set_vertices();
+   std::vector<Vertex> &get_vertices();
 private:
     std::vector<Vertex> vertices_;
     std::vector<unsigned int> indices_;

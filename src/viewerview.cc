@@ -13,6 +13,8 @@ ViewerView::ViewerView(QWidget *parent)
     GLWidget *widget = new GLWidget;
     ui->gridLayout->addWidget(widget);
 
+    controller->set_widget(widget);
+
     QPushButton *file_button = ViewerView::findChild<QPushButton *>("pushButton");
     connect(file_button, SIGNAL(released()), this, SLOT(LoadFile()));
 }
@@ -34,12 +36,13 @@ void ViewerView::LoadFile()
     QString file_name = file_path.fileName();
     ui->filename_label->setText(file_name);
 
+
+
     controller->ProcessFile();
     ui->vertices_num->setText(QString::number(controller->get_vertices_num()));
     ui->edges_num->setText(QString::number(controller->get_edges_num()));
     // TEMPORARY
 
-    controller->get_vertices();
 //    GLWidget *widget = new GLWidget;
 //    ui->gridLayout->addWidget(widget);
 }
