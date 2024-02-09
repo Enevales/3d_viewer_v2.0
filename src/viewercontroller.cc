@@ -14,8 +14,8 @@ void ViewerController::set_file_path(QString file_name){
 }
 
 void ViewerController::ProcessFile(){
+    model->ClearModel();
     status_ = model->ParseObjectFile(file_path_);
-    get_vertices();
     widget_->paintGL();
 
 }

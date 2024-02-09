@@ -5,6 +5,15 @@ ViewerModel::ViewerModel()
 
 }
 
+// ViewerModel::~ViewerModel(){
+
+// }
+
+void ViewerModel::ClearModel(){
+    vertices_.clear();
+    indices_.clear();
+}
+
 int ViewerModel::ParseObjectFile(std::string file_path){
     std::ifstream f(file_path);
     if (!f.is_open())

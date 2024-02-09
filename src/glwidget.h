@@ -38,25 +38,25 @@ private:
 class Shaders{
     protected:
         Shaders(const char *vertex_shader_source, const char *fragment_shader_source){
-             vertex_shader_ = glCreateShader(GL_VERTEX_SHADER);
-             glShaderSource(vertex_shader_, 1, &vertex_shader_source, NULL);
-             glCompileShader(vertex_shader_);
+            //  vertex_shader_ = glCreateShader(GL_VERTEX_SHADER);
+            //  glShaderSource(vertex_shader_, 1, &vertex_shader_source, NULL);
+            //  glCompileShader(vertex_shader_);
 
-             fragment_shader_ = glCreateShader(GL_FRAGMENT_SHADER);
-             glShaderSource(fragment_shader_, 1, &fragment_shader_source, NULL);
-             glCompileShader(fragment_shader_);
+            //  fragment_shader_ = glCreateShader(GL_FRAGMENT_SHADER);
+            //  glShaderSource(fragment_shader_, 1, &fragment_shader_source, NULL);
+            //  glCompileShader(fragment_shader_);
             
-             shader_program_ = glCreateProgram();
+            //  shader_program_ = glCreateProgram();
 
-             glAttachShader(shader_program_, vertex_shader_);
-             glAttachShader(shader_program_, fragment_shader_);
-             glLinkProgram(shader_program_);
+            //  glAttachShader(shader_program_, vertex_shader_);
+            //  glAttachShader(shader_program_, fragment_shader_);
+            //  glLinkProgram(shader_program_);
         }
-        ~Shaders(){ // WHY WASN't INVOKED??
+        ~Shaders(){ // WHY WASN'T THE FUNCTION INVOKED??
             std::cout << "shaders are destroyed!" << std::endl;
-             glDeleteShader(vertex_shader_);
-             glDeleteShader(fragment_shader_);
-             glDeleteProgram(shader_program_);
+            //  glDeleteShader(vertex_shader_);
+            //  glDeleteShader(fragment_shader_);
+            //  glDeleteProgram(shader_program_);
         }
         
     public:

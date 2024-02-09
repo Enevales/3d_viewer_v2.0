@@ -17,10 +17,13 @@ class ViewerModel
 {
 public:
     ViewerModel();
+   //  ~ViewerModel();
     int ParseObjectFile(std::string file_path);
+    void ClearModel();
     int get_vertices_num();
     int get_edges_num();
    std::vector<Vertex> &get_vertices();
+   
 private:
     std::vector<Vertex> vertices_;
     std::vector<unsigned int> indices_;
