@@ -16,8 +16,8 @@ void ViewerController::set_file_path(QString file_name){
 void ViewerController::ProcessFile(){
     model->ClearModel();
     status_ = model->ParseObjectFile(file_path_);
-    widget_->paintGL();
-
+    get_vertices();
+    
 }
 
 int ViewerController::get_vertices_num(){
@@ -43,6 +43,8 @@ void ViewerController::get_vertices(){
         axis_values[i * DIM + 2] = vertices[i].z_axis;
     }
     widget_->set_vertices(axis_values);
+    widget_->set_vertices_num(model->get_vertices_num());
+    widget_->update();
 
 }
 
