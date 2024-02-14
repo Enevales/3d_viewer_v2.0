@@ -73,30 +73,6 @@ void GLWidget::paintGL(){
 
     //shader_program_.setUniformValue("mvp_matrix", projection_ * matrix);
 
-//     VAO_.bind();
-
-
-//     vertex_buffer_.create();
-//   vertex_buffer_.bind();
-//   vertex_buffer_.setUsagePattern(QOpenGLBuffer::StaticDraw);
-//   vertex_buffer_.allocate(vertices_, sizeof(float) * 1521);
-//   vertex_buffer_.release();
-
-//   VAO_.create();
-//   VAO_.bind();
-
-//   vertex_buffer_.bind();
-//   glEnableVertexAttribArray(0);
-//   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
-
-//       glColor3d(0, 0, 1);
-//   glPointSize(5);
-//    glDrawArrays(GL_POINTS, 0, 507);
-   
-//   vertex_buffer_.release();
-
-//   VAO_.release();
-
     CreateBuffers();
     DrawVertices();
     ReleaseBuffers();
