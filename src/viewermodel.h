@@ -23,6 +23,7 @@ public:
     int get_vertices_num();
     int get_edges_num();
    std::vector<Vertex> &get_vertices();
+   std::vector<unsigned int> &get_edges();
    
 private:
     std::vector<Vertex> vertices_;

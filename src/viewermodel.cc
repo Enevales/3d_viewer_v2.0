@@ -49,6 +49,8 @@ int ViewerModel::ParseObjectFile(std::string file_path){
 }
 
 
+
+
 int ViewerModel::get_vertices_num(){
     return vertices_.size();
 }
@@ -59,4 +61,8 @@ int ViewerModel::get_edges_num(){
 
 std::vector<Vertex> &ViewerModel::get_vertices(){
    return vertices_;
+}
+
+std::vector<unsigned int> &ViewerModel::get_edges(){
+    return indices_;
 }

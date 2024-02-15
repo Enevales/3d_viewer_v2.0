@@ -17,6 +17,7 @@ public:
     int get_edges_num();
     void set_widget(GLWidget *widget);
     void get_vertices();
+    void get_indices();
 
 //    friend class GLWidget;
 private:

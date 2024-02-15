@@ -34,8 +34,11 @@ public:
 
     void set_vertices(float *vertices);
     void set_vertices_num(int num);
+    void set_indices(unsigned int *indices);
+    void set_indices_num(int num);
     void CreateBuffers();
     void DrawVertices();
+    void DrawEdges();
     void ReleaseBuffers();
     
     protected:
@@ -50,12 +53,15 @@ public:
 private:
     Ui::GLWidget *ui;
     float *vertices_ = nullptr;
+    unsigned int *indices_ = nullptr;
     int num_of_vertices_;
+    int num_of_edges_;
     QOpenGLShaderProgram shader_program_;
     QMatrix4x4 projection_;
 
     QOpenGLVertexArrayObject VAO_;
     QOpenGLBuffer vertex_buffer_ = QOpenGLBuffer(QOpenGLBuffer::VertexBuffer);
+    QOpenGLBuffer index_buffer_ = QOpenGLBuffer(QOpenGLBuffer::IndexBuffer);
 };
 
 

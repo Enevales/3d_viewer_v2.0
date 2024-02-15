@@ -1,5 +1,4 @@
 #include "viewercontroller.h"
-#include <iostream>  //temp
 
 ViewerController::ViewerController(QWidget *parent)
     : QWidget{parent}
@@ -17,7 +16,7 @@ void ViewerController::ProcessFile(){
     model->ClearModel();
     status_ = model->ParseObjectFile(file_path_);
     get_vertices();
-    
+    get_indices();
 }
 
 int ViewerController::get_vertices_num(){
@@ -44,10 +43,25 @@ void ViewerController::get_vertices(){
     }
     widget_->set_vertices(axis_values);
     widget_->set_vertices_num(model->get_vertices_num());
-    widget_->update();
+    // widget_->update();
 
 }
 
+void ViewerController::get_indices(){
+    
+    std::vector<unsigned int> indices = model->get_edges();
+    unsigned int *indices_values = new unsigned int[indices.size()];
+
+    for (int i = 0; i < indices.size(); i++) {
+        indices_values[i] = indices[i];
+
+    }
+
+    widget_->set_indices(indices_values);
+    widget_->set_indices_num(model->get_edges_num());
+    widget_->update();
+
+}
 
 ViewerController::~ViewerController()
 {
